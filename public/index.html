@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IBM PowerAI Vision</title>
+
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- FONT AWESOME CSS -->
+  <link rel="stylesheet" href="assets/css/all.css">
+
+
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Highchart1 -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+  <!-- Highchart2 -->
+  <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+
+</head>
+
+<body>
+  <!-- ****************  TOP NAVIGATION BAR  *************** -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark header" style="min-height:3.2rem">
+    <!-- <a href="https://www.ibm.com/sg-en/" target="_blank"> -->
+      <!-- <img src="/assets/images/ibm_white-sm.png" height="22" class="d-inline-block align-top" alt="IBM">
+    </a>&nbsp;&nbsp;&nbsp; -->
+    <a class="navbar-brand" href="https://www.ibm.com/sg-en/marketplace/ibm-powerai-vision" style="font-size: 3.1rem">
+      IBM PowerAI Vision
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+      <div class="navbar-nav my-2 my-lg-0">
+        <a href="#" class="nav-item nav-link text-light">
+          <i class="fas fa-user-circle" style="font-size: 2.25em;"></i>&nbsp;
+        </a>
+        <!-- <a href="#" class="nav-item nav-link text-light my-2 my-sm-0">Log out</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- ****************  BODY CONTENT  *************** -->
+  <div class="container-fluid" >
+    <!-- <br>
+    <div align="center">
+      <h3><b>PowerAI Vision</b></h3> Trains highly accurate models to classify images and detect objects in images 
+      and videos without deep learning expertise.
+    </div> -->
+
+    <hr>
+
+    <div class="row" style="text-align:center;">
+
+
+      <div class="container-fluid">
+          <div class="row">
+        
+          <div class="col-8 card" style="background-image:url('../public/assets/images/ibm.jpg')">
+            <div class="container card-body" >
+
+              <div class="row">
+
+                <div class="col-7">
+                  <!-- ****************  LIVE STREAMING (COLOUMN 1) *************** -->
+                  <b><h5 class="blink-two">CoBot Live Streaming</h5></b>
+                  <div class="card"><br>
+                    <div class="card-body">
+                      <video id="video" class="img-fluid img-thumbnail" width="900" height="900" autoplay></video>
+                      <div class="card-body">
+                        <h3><button id="start" type="button" class="btn btn-sm">
+                            <i class="far fa-play-circle"></i></button>
+                          <button id="stop" type="button" class="btn btn-sm">
+                            <i class="far fa-stop-circle"></i></button>
+                          <button id="reset" type="button" class="btn btn-sm">
+                            <i class="fas fa-sync-alt"></i></button></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-5">
+                  <!-- ****************  DEFECT RESULT (COLOUMN 2) *************** -->
+                  <b><h4>Defect Detection Result</h4></b>
+                  <div id="cardsection">                   
+                  </div><br>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+              <!-- ****************  DATA INSIGHTS *************** -->
+          <div class="col-4">
+            <div class="card" style="background-image:url('../public/assets/images/ibm.jpg')"><br>
+              <div class="card-body">
+                <h4>Data Insights</h4>
+                <div align="center">
+                  <!-- <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                      <div id="container" style="height: 350px"></div>
+                    </div> -->
+                    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                  </div> <br>
+
+                  <div class="card" style="min-width: 310px; height: 450px; max-width: 600px; margin: 0 auto">
+                    <div class="card-body">
+                      <div id="container2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ****************  FOOTER  *************** -->
+  <footer class="card-footer footer fixed-bottom">
+    <p>
+      Copyright &copy; IBM. All Rights Reserved.
+      <a href="https://www.sgpbusiness.com/company/Ibm-Manufacturing-Solutions-Pte-Ltd" target="_blank">
+        IBM Manufacturing Solutions Pte Ltd (IMS)
+      </a> Singapore.
+    </p>
+  </footer>
+
+
+  <!-- BOOTSTRAP JS -->
+  <script src="assets/js/jquery.slim.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- SOCKETIO JS -->
+  <script src="assets/js/socket.io.js"></script>
+
+  <!-- MAIN JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- highchart js -->
+  <script src="assets/js/highchart.js"></script>
+
+</body>
+
+</html>

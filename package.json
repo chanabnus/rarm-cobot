@@ -1,0 +1,16 @@
+{
+  "name": "rarm",
+  "version": "1.0.0",
+  "description": "Application for TM Robot arm",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hafiz Misron",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0"
+  }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IBM PowerAI Vision</title>
+
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<!-- FONT AWESOME CSS -->
+<link rel="stylesheet" href="assets/css/all.css">
+
+<!-- STYLE CSS -->
+<link rel="stylesheet" href="assets/css/style.css"> 
+</head>
+
+<body>
+  <!-- ****************  TOP NAVIGATION BAR  *************** -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark header" style="min-height:3.2rem">
+    <a href="https://www.ibm.com/sg-en/" target="_blank">
+      <img src="/assets/images/ibm_white-sm.png" height="22" class="d-inline-block align-top" alt="IBM">
+    </a>&nbsp;&nbsp;&nbsp;
+    <a class="navbar-brand" href="https://www.ibm.com/sg-en/marketplace/ibm-powerai-vision" style="font-size: 1.1rem">
+      PowerAI Vision
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+      <div class="navbar-nav my-2 my-lg-0">
+        <a href="#" class="nav-item nav-link text-light">
+          <i class="fas fa-user-circle" style="font-size: 1.25em;"></i>&nbsp;Admin
+        </a>
+        <a href="#" class="nav-item nav-link text-light my-2 my-sm-0">Log out</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ****************  BODY CONTENT  *************** -->
+  <div class="container-fluid">
+    <br>
+    <h3>IBM PowerAI Vision Recognition - Video Object Detection</h3>
+    <hr>
+
+    <div class="row" style="text-align:center;">
+
+      <!-- ****************  LIVE STREAMING (COLOUMN 1) *************** -->
+      <div class="col-md-4">
+        <h5 class="blink-two">Live Streaming</h5>
+        <div class="card"><br>
+          <div class="card-body">
+            <video id="video" class="img-fluid img-thumbnail" width="800" height="600" autoplay></video>
+            <div class="card-body">
+              <input id="start" type="button" value="START CoBot" class="btn btn-success btn-sm btn-block">
+              <input id="stop" type="button" value="STOP CoBot" class="btn btn-danger btn-sm btn-block">
+              <input id="reset" type="button" value="RESET" class="btn btn-warning btn-sm btn-block">
+            </div>
+          </div>
+        </div><br />
+      </div>
+
+      <!-- ****************  FORM SUBMISSION (COLOUMN 2) *************** -->
+      <div class="col-md-8" id="rightside">
+        <h5>Defect Detection</h5>
+        <div id="cardsection"></div><br><br><br><br>
+
+        <!-- <div class="card" id="card0">
+          <div class="card-header" style="border:none; font-size:1.3em;">Analyzing DIMM02</div>
+          <div class="card-body">photos go here</div>
+          <div class="card-footer">test3</div>
+        </div><br>
+
+        <div class="card" id="card1">
+          <div class="card-header" style="border:none; font-size:1.3em;">Analyzing DIMM01</div>
+          <div class="card-body">photos go here</div>
+          <div class="card-footer">test3</div>
+        </div><br>
+
+        <div class="card" id="card2">
+          <div class="card-header" style="border:none; font-size:1.3em;">Analyzing DIMM00</div>
+          <div class="card-body">photos go here</div>
+          <div class="card-footer">test3</div>
+        </div><br> -->
+
+        <!--<div class="card"><br>
+          <div class="card-header" style="border:none; font-size:1.3em;">PowerAI Scoring: <span id="dimmresult" style="color:brown;">ANALYSIS...</span></div>
+          <div class="card-body" style="min-height:55vh">
+            <a href="#"><canvas id="canvas0" class="img-fluid img-thumbnail" style="max-width:150px; display:none;" data-toggle="modal" data-target="#canvasModal0"></canvas></a>-->
+            
+
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="canvasModal0" tabindex="-1" role="dialog" aria-labelledby="canvasModalLabel" aria-hidden="false">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="canvasModalLabel">Object Detected</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Status: fail!</h5>
+                    <hr>
+                    <h5>Label</h5>
+                    <p>solder_on_gold</p>
+                    <hr>
+                    <h5>Confidence %</h5>
+                    <p>0.982</p>
+                    <hr>
+                    <h5>Timestamp</h5>
+                    <p>2/13/2019, 3:18:54 PM</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="canvasModal1" tabindex="-1" role="dialog" aria-labelledby="canvasModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="canvasModalLabel">Object Detected</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Status: fail!</h5>
+                    <hr>
+                    <h5>Label</h5>
+                    <p>knock_off</p>
+                    <hr>
+                    <h5>Confidence %</h5>
+                    <p>0.892</p>
+                    <hr>
+                    <h5>Timestamp</h5>
+                    <p>2019-02-07T07:17:19.876Z</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- ========== IFRAME/ARTICLE DISPLAY RESULT  ========== -->
+            <!--<iframe id="srctarget" name="srctarget" style="width:0; height:0; border:0; border:none;" src=""></iframe>
+            <article></article>
+          </div>
+          <div class="card-footer">
+            <p>Status: <br><span id="status"  style="border:none; color: brown;">Not Connected</span></p>
+            <small class="text-muted">Last Update: <span id="status_timestamp"></span></small>
+          </div>
+          
+        </div><br><br><br><br> -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ****************  FOOTER  *************** -->
+  <footer class="card-footer footer fixed-bottom">
+    <p>
+      Copyright &copy; IBM. All Rights Reserved. |
+      <a href="https://www.sgpbusiness.com/company/Ibm-Manufacturing-Solutions-Pte-Ltd" target="_blank">
+        IBM Manufacturing Solutions Pte Ltd (IMS)
+      </a> Singapore.
+    </p>
+  </footer>
+
+
+  <!-- BOOTSTRAP JS -->
+  <script src="assets/js/jquery.slim.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- SOCKETIO JS -->
+  <script src="assets/js/socket.io.js"></script>
+
+  <!-- MAIN JS -->
+  <script src="assets/js/main.js"></script> 
+
+</body>
+
+</html>
